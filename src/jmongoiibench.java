@@ -313,9 +313,7 @@ public class jmongoiibench {
         reporterThread.start();
 
         Thread queryThread = new Thread(t.new MyQuery(1, 1, numMaxInserts, db));
-        if (queriesPerMinute > 0.0) {
             queryThread.start();
-        }
 
         Thread[] tWriterThreads = new Thread[writerThreads];
         
@@ -488,16 +486,16 @@ public class jmongoiibench {
                 logMe("Query thread %d : ready to query collection %s",threadNumber, collectionName);
 
                 while (allDone == 0) {
-                    //try {
-                    //    Thread.sleep(10);
-                    //} catch (Exception e) {
-                    //    e.printStackTrace();
-                    // }
+                    try {
+                        Thread.sleep(1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                     }
                     
                     long thisNow = System.currentTimeMillis();
                     
                     // wait until my next runtime
-                    if (thisNow > nextQueryMillis) {
+                    {
                         nextQueryMillis = thisNow + msBetweenQueries;
 
                         // check if number of inserts reached
