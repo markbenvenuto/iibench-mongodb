@@ -16,12 +16,12 @@ export MAX_ROWS=100000000
 
 # run the benchmark for this many minutes (or the number of inserts defined by MAX_ROWS)
 #   valid values : intever > 0
-export RUN_MINUTES=60
+export RUN_MINUTES=260
 export RUN_SECONDS=$[RUN_MINUTES*60]
 
 # total number of documents to insert per "batch"
 #   valid values : integer > 0
-export NUM_DOCUMENTS_PER_INSERT=1000
+export NUM_DOCUMENTS_PER_INSERT=10
 
 # total number of documents to insert per second, allows for the benchmark to be rate limited
 #   valid values : integer > 0
