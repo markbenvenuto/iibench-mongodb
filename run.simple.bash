@@ -59,11 +59,11 @@ export NUM_CHAR_FIELDS=1
 
 # size (in bytes) of each additional semi-compressible character field
 #   valid values : integer >= 0
-export LENGTH_CHAR_FIELDS=1000
+export LENGTH_CHAR_FIELDS=2000
 
 # percentage of highly compressible data (repeated character "a") in character field
 #   valid values : integer >= 0 and <= 100
-export PERCENT_COMPRESSIBLE=90
+export PERCENT_COMPRESSIBLE=50
 
 # number of secondary indexes to maintain
 #   valid values : integer >= 0 and <= 3
